@@ -3,8 +3,8 @@ services:
   backend:
     build:
       context: ../be
-      image: leeduck259835/todolist:be
       dockerfile: Dockerfile
+    image: leeduck259835/todolist:be
     restart: unless-stopped
     environment:
       - DB_HOST=mongodb
