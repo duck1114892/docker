@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ../be
+      image: leeduck259835/todolist:be
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+    ports:
+      - 8080:8080
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
