@@ -1,9 +1,6 @@
 version: '3.8'
 services:
   backend:
-    build:
-      context: ../be
-      dockerfile: Dockerfile
     image: leeduck259835/todolist:be
     restart: unless-stopped
     environment:
